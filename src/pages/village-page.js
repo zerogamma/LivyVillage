@@ -8,13 +8,15 @@ import LoadingBar from '../components/common/loading-bar'
 import Switcher from '../components/village/switcher'
 import Filter from '../components/village/filter'
 import LayoutContainer from '../components/village/layoutContainer'
+import { useSelector } from 'react-redux'
 
 const Village = () => {
     const dispatch = useDispatch()
     const [filterValue, setfilterValue] = useState({'age':'', 'weight':'','height':'','hair':'','profession':[]})
-    const [isLoading, setIsLoading] = useState(false)
     const [pageValue, setPageValue] = useState(0)
     const [searchValue, setSearchValue] = useState('')
+
+    const isLoading = useSelector( state => state.list.loading )
 
     const filter = (value) => {
         setfilterValue(value)
@@ -33,11 +35,8 @@ const Village = () => {
                 await Promise.all([fetch()]);
               } catch (err) {
                 console.error(err);
-              } finally {
-                setIsLoading(false);
               }
         }
-        setIsLoading(true);
         fetchData();
     },[dispatch , searchValue , filterValue , pageValue])
 

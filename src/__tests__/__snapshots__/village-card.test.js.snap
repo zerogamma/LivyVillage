@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`village card Component render test renders village-card component correctly 1`] = `
+.c0 {
+  display: grid;
+  border: 1px solid;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  margin: 15px;
+  grid-template-columns: 40% 60%;
+  gap: 1px;
+  width: 400px;
+  height: 550px;
+}
+
+.c1 {
+  background-size: 100% 100% !important;
+}
+
+.c2 span {
+  font-variant: all-small-caps;
+}
+
+.c3 {
+  margin: 10px 0 !important;
+  border-bottom: 1px solid;
+}
+
+.c3 span {
+  font-variant: all-small-caps;
+}
+
+.c6 {
+  margin-left: 90px;
+}
+
+.c4 {
+  margin: 0 15px;
+}
+
+.c5 {
+  border-bottom: 1px solid;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  display: none;
+}
+
+@media (max-width:767px) {
+  .c0 {
+    grid-template-columns: auto;
+    grid-template-rows: 25% 75%;
+    width: 250px;
+    height: 650px;
+  }
+}
+
+@media (max-width:767px) {
+  .c2 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
+  .c3 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
+  .c6 {
+    margin-left: 120px;
+  }
+}
+
+<div
+  className="MuiPaper-root MuiCard-root c0 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="MuiCardMedia-root c1"
+    style={
+      Object {
+        "backgroundImage": "url(\\"http://www.publicdomainpictures.net/pictures/120000/nahled/white-hen.jpg\\")",
+      }
+    }
+  />
+  <div
+    className=""
+  >
+    <div
+      className="MuiCardContent-root "
+    >
+      <h2
+        className="MuiTypography-root c2 MuiTypography-h6 MuiTypography-gutterBottom"
+      >
+        Fizkin Voidbuster
+      </h2>
+      <p
+        className="MuiTypography-root c2 MuiTypography-body1"
+      >
+        <span>
+          Age: 
+        </span>
+        288
+      </p>
+      <p
+        className="MuiTypography-root c2 MuiTypography-body1"
+      >
+        <span>
+          Weight: 
+        </span>
+        35.279167
+      </p>
+      <p
+        className="MuiTypography-root c2 MuiTypography-body1"
+      >
+        <span>
+          Height: 
+        </span>
+        110.43628
+      </p>
+      <p
+        className="MuiTypography-root c2 MuiTypography-body1"
+      >
+        <span>
+          Hair Color: 
+        </span>
+        Green
+      </p>
+      <p
+        className="MuiTypography-root c3 MuiTypography-body1"
+      >
+        Friends
+      </p>
+    </div>
+    <div
+      className="c4"
+    >
+      <div
+        className="c5"
+        onClick={[Function]}
+      >
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          <span>
+            Profession
+          </span>
+        </p>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root c6"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+          />
+        </svg>
+      </div>
+      <div
+        className="c7"
+      >
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          Brewer
+        </p>
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          Medic
+        </p>
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          Prospector
+        </p>
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          Gemcutter
+        </p>
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          Mason
+        </p>
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          Tailor
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

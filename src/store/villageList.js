@@ -5,19 +5,30 @@ import { compareWithTrunc , containsIn} from '../utils/function/Utils'
 
 export const fetchVillage = createAsyncThunk(
     'users/fetchVillage',
-    async () => {
-      const response = await Api().default();
-      return {'response': response }
+    async () => {  
+      try {
+        const response = await Api().default();
+        return {'response': response }
+      } catch (err) {
+        if (!err.response) {
+          throw err;
+        }
+        return err.response.data;
+      }
     }
 )
 
+export const fetchSuccessful = fetchVillage.fulfilled;
+export const fetchPending = fetchVillage.pending;
+export const fetchFailed = fetchVillage.rejected;
+
 const listSlice = createSlice({
     name: 'villageList',
-    initialState:  { entities: [] , currentPage : 0 , noData: true},
+    initialState:  { entities: [] , currentPage : 0 , noData: true , loading: false},
     reducers:{
     },
-    extraReducers: {
-      [fetchVillage.fulfilled]: (state, action) => {
+    extraReducers: (builder) =>{
+      builder.addCase(fetchSuccessful, (state, action) => {
           const villageName = Object.keys(action.payload.response)[0]
           const villageUsers = action.payload.response[villageName];
           const currentPage = action.meta.arg.page * config.offset;
@@ -37,11 +48,21 @@ const listSlice = createSlice({
             
             state.noData = viewData.length === 0 ? true : false;
             state.entities = viewData;
+            state.loading = false;
           } catch (e) {
             state.noData = true;
             console.log('Error: '+ e)
           }
-      },
+      });
+      builder.addCase(fetchPending, (state, action) => {
+        state.loading = true;
+      });
+      builder.addCase(fetchFailed, (state, action) => {
+        state.error = action.error.message
+          ? action.error.message
+          : "Failed to load data";
+        state.loading = false;
+      });
     }
 })
 
