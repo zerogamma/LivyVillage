@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { fetchVillage } from '../store/villageList'
 import List from "../components/village/village-container"
 import MainContainer from "../components/common/mainContainer"
-import SearchBar from '../components/common/search-bar'
+import SearchBar from '../components/village/search-bar'
 import LoadingBar from '../components/common/loading-bar'
 import Switcher from '../components/village/switcher'
 import Filter from '../components/village/filter'

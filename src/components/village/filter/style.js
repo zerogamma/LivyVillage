@@ -54,15 +54,18 @@ export const FiImgContainer = styled.div`
 `
 
 export const FiExpand = styled(ArrowForwardIosIcon)`
+    cursor: pointer;
     position: fixed;
     left: 10px;
 `
 
 export const FiCollapse = styled(ArrowBackIosIcon)`
+    cursor: pointer;
     position: fixed;
 `
 
 export const FiButtom = styled(Button)`
+    cursor: pointer;
 `
 
 export const FiNote = styled.div`

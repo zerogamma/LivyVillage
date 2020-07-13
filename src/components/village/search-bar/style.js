@@ -26,6 +26,7 @@ export const SchBox = styled(TextField)`
 `
 
 export const SchButtom = styled(SearchIcon)`
+    cursor: pointer;
     position: absolute;
     margin-left: 5px;
     margin-top: 5px;

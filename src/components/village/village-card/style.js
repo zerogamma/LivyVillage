@@ -72,6 +72,7 @@ export const CrdAccord = styled.div`
     margin: 0 15px;
 `
 export const CrdAccordSummary = styled.div`
+    cursor: pointer;
     border-bottom: 1px solid;
     margin-bottom: 12px;
     display: flex;

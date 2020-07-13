@@ -8,7 +8,7 @@ export const fetchVillage = createAsyncThunk(
     async (data) => {  
       try {
         if (data === undefined)
-          throw 'no data';
+          throw Error('no data');
         const response = await Api.default();
         return {'response': response }
       } catch (err) {

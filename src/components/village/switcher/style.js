@@ -12,6 +12,7 @@ export const SwContainer = styled.div`
 `
 
 export const SwPrev = styled(SkipPreviousIcon)`
+    cursor: pointer;
     width: 2em !important;
     height: 2em !important;
    
@@ -26,6 +27,7 @@ export const SwPrev = styled(SkipPreviousIcon)`
 `
 
 export const SwNext = styled(SkipNextIcon)`
+    cursor: pointer;    
     width: 2em !important;
     height: 2em !important;
 
