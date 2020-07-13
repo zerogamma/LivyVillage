@@ -17,6 +17,7 @@ const Village = () => {
     const [searchValue, setSearchValue] = useState('')
 
     const isLoading = useSelector( state => state.list.loading )
+    const noData = useSelector( state => state.list.noData )
 
     const filter = (value) => {
         setfilterValue(value)
@@ -47,7 +48,7 @@ const Village = () => {
                 <LoadingBar isLoading={isLoading}/>
                 <LayoutContainer>
                     <SearchBar search={search} placeholder='Search By Name (Case sensitive)' />
-                    <Switcher page={pageValue} setPage={setPageValue}/>
+                    <Switcher noData={noData} page={pageValue} setPage={setPageValue}/>
                     <List />
                 </LayoutContainer>
             </MainContainer>

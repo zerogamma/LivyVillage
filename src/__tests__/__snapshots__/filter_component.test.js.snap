@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Component render test renders Filter component correctly 1`] = `
+.c0 {
+  -webkit-transition: width 1s ease-out;
+  transition: width 1s ease-out;
+  height: 100%;
+  background-color: lightgray;
+  min-height: 1000px;
+  width: 45px;
+}
+
+.c3 {
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: relative;
+  top: 50%;
+}
+
+.c1 {
+  top: 15px;
+  position: relative;
+  text-align: end;
+  margin-right: 25px;
+}
+
+.c2 {
+  position: fixed;
+  left: 10px;
+}
+
+@media (max-width:767px) {
+  .c3 {
+    top: 4%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root c2"
+      focusable="false"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+      />
+    </svg>
+  </div>
+  <div
+    className="c3"
+  >
+    <div
+      className=""
+    >
+      Filter
+    </div>
+  </div>
+</div>
+`;

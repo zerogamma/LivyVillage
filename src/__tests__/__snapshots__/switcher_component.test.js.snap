@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switcher Component render test renders Switcher component correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  width: 2em !important;
+  height: 2em !important;
+  color: black;
+}
+
+.c2 {
+  width: 2em !important;
+  height: 2em !important;
+}
+
+@media (max-width:767px) {
+  .c0 {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width:767px) {
+  .c1 {
+    width: 1em !important;
+    height: 1em !important;
+  }
+}
+
+@media (max-width:767px) {
+  .c2 {
+    width: 1em !important;
+    height: 1em !important;
+  }
+}
+
+<div
+  className="c0"
+>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root c1"
+    disabled={false}
+    focusable="false"
+    onClick={[Function]}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M6 6h2v12H6zm3.5 6l8.5 6V6z"
+    />
+  </svg>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root c2"
+    focusable="false"
+    onClick={[Function]}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"
+    />
+  </svg>
+</div>
+`;

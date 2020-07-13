@@ -5,10 +5,9 @@ import {
     SwNext,
     SwNoDataImg
 } from './style'
-import { useSelector } from 'react-redux'
 
-const Switch = ({page,setPage}) => {
-    const noData = useSelector( state => state.list.noData )
+const Switch = ({page,setPage,noData}) => {
+    
     return  !noData ? <SwContainer>
                         <SwPrev onClick={()=> page !== 0 ? setPage(page - 1 ) : null} disabled={page === 0}/>
                         <SwNext onClick={()=> setPage(page + 1 )} />
