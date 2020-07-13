@@ -11,7 +11,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.<br />
 There are 5 test-driven cases: <br />
-    `axios_ApiCall.test.js:` this test is used to check the redux call when succeed or failed. <br>
+    `redux_flow.test:` this test is used to check the redux call when succeed or failed. <br>
     `$_components.test.js:` this tests are used to check the components if the render match a previous snapshot.
 
 ### `NOTES:`

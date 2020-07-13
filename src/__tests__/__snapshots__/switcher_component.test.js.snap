@@ -13,12 +13,14 @@ exports[`Switcher Component render test renders Switcher component correctly 1`]
 }
 
 .c1 {
+  cursor: pointer;
   width: 2em !important;
   height: 2em !important;
   color: black;
 }
 
 .c2 {
+  cursor: pointer;
   width: 2em !important;
   height: 2em !important;
 }

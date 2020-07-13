@@ -10,7 +10,7 @@ export const fetchVillage = createAsyncThunk(
         if (data === undefined)
           throw Error('no data');
         const response = await Api.default();
-        return {'response': response }
+        return response
       } catch (err) {
         if (!err.response) {
           throw err;
@@ -31,8 +31,8 @@ const listSlice = createSlice({
     },
     extraReducers: (builder) =>{
       builder.addCase(fetchSuccessful, (state, action) => {
-          const villageName = Object.keys(action.payload.response)[0]
-          const villageUsers = action.payload.response[villageName];
+          const villageName = Object.keys(action.payload)[0]
+          const villageUsers = action.payload[villageName];
           const currentPage = action.meta.arg.page * config.offset;
           const offset = currentPage + config.offset;
 

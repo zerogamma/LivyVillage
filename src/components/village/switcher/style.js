@@ -44,4 +44,10 @@ export const SwNoDataImg = styled.div`
     width: 500px;
     background-size: contain;
     background-position-y: top;
+    margin-top: 60px;
+
+    @media (max-width: ${props => props.theme.screen.sm}) {
+        height: 250px;
+        width: 250px;
+    }
 `

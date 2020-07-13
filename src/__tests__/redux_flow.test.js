@@ -8,7 +8,7 @@ jest.mock('../api/api-functions');
 
 const mockStore = configureMockStore([thunk]);
 
-describe("Api call function", () => {
+describe("Redux function", () => {
     describe('reducer, actions and selectors', () => {
         it('should return the initial state on first run', () => {
           const nextState =  { entities: [] , currentPage : 0 , noData: true , loading: false};
@@ -22,19 +22,7 @@ describe("Api call function", () => {
           
           const requestPayload = {
                 'name':'',
-                'filter':{
-                    'age':'306',
-                    'weight':'39',
-                    'height':'107',
-                    'hair':'Pink',
-                    'profession':[
-                        "Metalworker",
-                        "Woodcarver",
-                        "Stonecarver",
-                        " Tinker",
-                        "Tailor",
-                        "Potter"
-                    ]}, 
+                'filter':{}, 
                 'page':0
             };
           
@@ -87,8 +75,10 @@ describe("Api call function", () => {
           await store.dispatch(fetchVillage(requestPayload));
 
           const expectedActions = [fetchPending(),fetchSuccessful(responsePayload)];
-          const getPayload = store.getActions().map( action => action.type === 'users/fetchVillage/fulfilled' ? action.payload.response : null)
+        
+          const getPayload = store.getActions().map( action => action.type === 'users/fetchVillage/fulfilled' ? action.payload : null)
           const expectedPayload = expectedActions.map( action => action.type === 'users/fetchVillage/fulfilled' ? action.payload : null)
+
           expect(getPayload).toEqual(expectedPayload);
         });
 

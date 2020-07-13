@@ -2,14 +2,11 @@ import axios from 'axios'
 import api from '../api.conf'
 
 const Api = { 'default': async () => {
-            let locals = []
             try {
-              const response = await axios.get(`${api.url}`)
-              return response.data || locals
+              return await axios.get(`${api.url}`).then(resp => resp.data);
             } catch (error) {
-              console.error(error.toString())
+              return error.message
             }
-            return locals
 } }
 
 export default Api;
