@@ -1,16 +1,13 @@
 import React from "react";
-import { useSelector } from 'react-redux'
 import { 
     ELContainer,
 } from './style'
 
 import Village from '../village-list'
 
-const List = () => {
-    const listStore = useSelector( state => state.list.entities )
-
+const List = ({data}) => {
     return <ELContainer>
-                <Village data={listStore} />                    
+                <Village data={data} />                    
             </ELContainer>
 }
 
