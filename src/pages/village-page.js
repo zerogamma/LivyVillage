@@ -9,21 +9,20 @@ import Switcher from '../components/village/switcher'
 import Filter from '../components/village/filter'
 import LayoutContainer from '../components/village/layoutContainer'
 
-
 const Village = () => {
     const dispatch = useDispatch()
-    const [searchValue, setSearchValue] = useState('')
+    const [filterValue, setfilterValue] = useState({'age':'', 'weight':'','height':'','hair':'','profession':[]})
     const [isLoading, setIsLoading] = useState(false)
     const [pageValue, setPageValue] = useState(0)
 
-    const search = (value) => {
-        setSearchValue(value);
+    const filter = (value) => {
+        setfilterValue(value)
     }
 
     useEffect( () => { 
         async function fetchData() {
             async function fetch(){
-                dispatch(fetchVillage({'filter':searchValue, 'page':pageValue}));
+                dispatch(fetchVillage({'filter':filterValue, 'page':pageValue}));
             }
             try {
                 await Promise.all([fetch()]);
@@ -35,17 +34,17 @@ const Village = () => {
         }
         setIsLoading(true);
         fetchData();
-    },[dispatch, searchValue, pageValue])
+    },[dispatch, filterValue, pageValue])
 
    
 
     return <MainContainer>
-                <Filter />
+                <Filter currentFilter={filterValue} filter={filter}/>
                 <LoadingBar isLoading={isLoading}/>
                 <LayoutContainer>
                     {/* <SearchBar search={search} placeholder='User Id (MultiSearch e.g: 1,2,3)' /> */}
                     <Switcher page={pageValue} setPage={setPageValue}/>
-                    <List search={search} />
+                    <List />
                 </LayoutContainer>
             </MainContainer>
 }
