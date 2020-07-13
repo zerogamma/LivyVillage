@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`village-card Component render test renders village-card component correctly 1`] = `
+exports[`village-card and village-list Component render test renders village-card component correctly 1`] = `
 .c0 {
   display: grid;
   border: 1px solid;
@@ -230,7 +230,7 @@ exports[`village-card Component render test renders village-card component corre
 </div>
 `;
 
-exports[`village-list Component render test renders village-list component correctly 1`] = `
+exports[`village-card and village-list Component render test renders village-list component correctly 1`] = `
 Array [
   .c1 {
   display: grid;
