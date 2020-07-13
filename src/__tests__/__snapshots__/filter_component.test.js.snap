@@ -26,6 +26,7 @@ exports[`Filter Component render test renders Filter component correctly 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   position: fixed;
   left: 10px;
 }

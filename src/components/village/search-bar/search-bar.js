@@ -1,7 +1,8 @@
 import React , { useRef } from "react";
 import {
     SchBox,
-    SchButtom,
+    SchButtomSearch,
+    SchButtomClear,
     SchContainer
 } from './style';
 
@@ -10,6 +11,10 @@ const SearchBar = (props) => {
     const inputValueRef = useRef(null);
 
     const action = () => (props.search(inputValueRef.current.value))
+    const actionClear = () => {
+        inputValueRef.current.value = '';
+        props.search('')
+    }
     const handleKeyPress = (target) => {
        if (target.charCode === 13)
             action();
@@ -18,7 +23,8 @@ const SearchBar = (props) => {
     return (
     <SchContainer>
         <SchBox  inputRef={inputValueRef} onKeyPress={handleKeyPress} placeholder={props.placeholder} />
-        <SchButtom onClick={ action }>Search</SchButtom>
+        <SchButtomSearch onClick={ action } />
+        <SchButtomClear onClick={ actionClear } />
     </SchContainer>
 )}
 

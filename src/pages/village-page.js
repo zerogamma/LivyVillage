@@ -50,7 +50,7 @@ const Village = () => {
                 <LayoutContainer>
                     <SearchBar search={search} placeholder='Search By Name (Case sensitive)' />
                     <Switcher noData={noData} page={pageValue} setPage={setPageValue}/>
-                    <List data={listStore}/>
+                    <List data={listStore} friendSearch={search} searchProfession={filter} currentFilter={filterValue}/>
                 </LayoutContainer>
             </MainContainer>
 }

@@ -44,7 +44,12 @@ export const CrdInfo = styled(Typography)`
     }
 `
 
-export const CrdInfoFriend = styled(CrdInfo)`
+export const CrdInfoAction = styled(CrdInfo)`
+    cursor:pointer;
+    :hover{
+        background-color: lightgrey;
+        border-radius: 4px;
+    }
 `
 
 export const CrdInfoFriendTitle = styled(CrdInfo)`

@@ -23,6 +23,19 @@ exports[`village-card Component render test renders village-card component corre
   font-variant: all-small-caps;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c8 span {
+  font-variant: all-small-caps;
+}
+
+.c8:hover {
+  background-color: lightgrey;
+  border-radius: 4px;
+}
+
 .c3 {
   margin: 10px 0 !important;
   border-bottom: 1px solid;
@@ -41,6 +54,7 @@ exports[`village-card Component render test renders village-card component corre
 }
 
 .c5 {
+  cursor: pointer;
   border-bottom: 1px solid;
   margin-bottom: 12px;
   display: -webkit-box;
@@ -64,6 +78,12 @@ exports[`village-card Component render test renders village-card component corre
 
 @media (max-width:767px) {
   .c2 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
+  .c8 {
     font-size: 12px !important;
   }
 }
@@ -169,32 +189,38 @@ exports[`village-card Component render test renders village-card component corre
         className="c7"
       >
         <p
-          className="MuiTypography-root c2 MuiTypography-body1"
+          className="MuiTypography-root c8 MuiTypography-body1"
+          onClick={[Function]}
         >
           Brewer
         </p>
         <p
-          className="MuiTypography-root c2 MuiTypography-body1"
+          className="MuiTypography-root c8 MuiTypography-body1"
+          onClick={[Function]}
         >
           Medic
         </p>
         <p
-          className="MuiTypography-root c2 MuiTypography-body1"
+          className="MuiTypography-root c8 MuiTypography-body1"
+          onClick={[Function]}
         >
           Prospector
         </p>
         <p
-          className="MuiTypography-root c2 MuiTypography-body1"
+          className="MuiTypography-root c8 MuiTypography-body1"
+          onClick={[Function]}
         >
           Gemcutter
         </p>
         <p
-          className="MuiTypography-root c2 MuiTypography-body1"
+          className="MuiTypography-root c8 MuiTypography-body1"
+          onClick={[Function]}
         >
           Mason
         </p>
         <p
-          className="MuiTypography-root c2 MuiTypography-body1"
+          className="MuiTypography-root c8 MuiTypography-body1"
+          onClick={[Function]}
         >
           Tailor
         </p>
@@ -228,6 +254,19 @@ Array [
   font-variant: all-small-caps;
 }
 
+.c9 {
+  cursor: pointer;
+}
+
+.c9 span {
+  font-variant: all-small-caps;
+}
+
+.c9:hover {
+  background-color: lightgrey;
+  border-radius: 4px;
+}
+
 .c4 {
   margin: 10px 0 !important;
   border-bottom: 1px solid;
@@ -246,6 +285,7 @@ Array [
 }
 
 .c6 {
+  cursor: pointer;
   border-bottom: 1px solid;
   margin-bottom: 12px;
   display: -webkit-box;
@@ -280,7 +320,9 @@ Array [
 }
 
 @media (max-width:767px) {
-
+  .c9 {
+    font-size: 12px !important;
+  }
 }
 
 @media (max-width:767px) {
@@ -387,32 +429,38 @@ Array [
             className="c8"
           >
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c9 MuiTypography-body1"
+              onClick={[Function]}
             >
               Brewer
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c9 MuiTypography-body1"
+              onClick={[Function]}
             >
               Medic
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c9 MuiTypography-body1"
+              onClick={[Function]}
             >
               Prospector
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c9 MuiTypography-body1"
+              onClick={[Function]}
             >
               Gemcutter
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c9 MuiTypography-body1"
+              onClick={[Function]}
             >
               Mason
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c9 MuiTypography-body1"
+              onClick={[Function]}
             >
               Tailor
             </p>
@@ -443,8 +491,17 @@ Array [
   font-variant: all-small-caps;
 }
 
+.c5 {
+  cursor: pointer;
+}
+
 .c5 span {
   font-variant: all-small-caps;
+}
+
+.c5:hover {
+  background-color: lightgrey;
+  border-radius: 4px;
 }
 
 .c4 {
@@ -465,6 +522,7 @@ Array [
 }
 
 .c7 {
+  cursor: pointer;
   border-bottom: 1px solid;
   margin-bottom: 12px;
   display: -webkit-box;
@@ -580,6 +638,7 @@ Array [
           </p>
           <p
             className="MuiTypography-root c5 MuiTypography-body1"
+            onClick={[Function]}
           >
             Fizwood Voidtossle
           </p>
@@ -613,17 +672,20 @@ Array [
             className="c9"
           >
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c5 MuiTypography-body1"
+              onClick={[Function]}
             >
               Cook
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c5 MuiTypography-body1"
+              onClick={[Function]}
             >
               Baker
             </p>
             <p
-              className="MuiTypography-root c3 MuiTypography-body1"
+              className="MuiTypography-root c5 MuiTypography-body1"
+              onClick={[Function]}
             >
               Miner
             </p>

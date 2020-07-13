@@ -26,8 +26,9 @@ describe("village-card Component render test", () => {
         ],
         "friends": []
       }
-      
-      const comp = renderWithTheme(<VillageCard data={data} />).toJSON()
+      const filterData = {'age':'', 'weight':'','height':'','hair':'','profession':[]}
+
+      const comp = renderWithTheme(<VillageCard data={data} friendSearch={()=>{}} searchProfession={()=>{}} currentFilter={filterData}/>).toJSON()
       expect(comp).toMatchSnapshot()
     })
 })
@@ -70,9 +71,10 @@ describe("village-list Component render test", () => {
       "Fizwood Voidtossle"
       ]
       },
-  ]
+    ]
+    const filterData = {'age':'', 'weight':'','height':'','hair':'','profession':[]}
     
-    const comp = renderWithTheme(<VillageList data={data} />).toJSON()
+    const comp = renderWithTheme(<VillageList data={data} friendSearch={()=>{}} searchProfession={()=>{}} currentFilter={filterData}/>).toJSON()
     expect(comp).toMatchSnapshot()
   })
 })

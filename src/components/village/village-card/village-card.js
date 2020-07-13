@@ -8,10 +8,10 @@ import {
     CrdAccordSummary,
     CrdAccordDetails,
     CrdDetails,
-    CrdInfoFriend,
     CrdInfoFriendTitle,
     CrdExpandM,
-    CrdExpandL
+    CrdExpandL,
+    CrdInfoAction
 } from './style'
 
 
@@ -20,6 +20,17 @@ const VillageCard = (props) => {
 
 const [expand, setExpand] = useState(false)
 
+const findFriend = (target)=> {
+    props.friendSearch(target.currentTarget.innerText);
+}
+
+const searchProfession = (target) => {
+    const newProfession = [...props.currentFilter.profession];
+    if (!newProfession.includes(target.currentTarget.innerText)){
+        newProfession.push(target.currentTarget.innerText);
+        props.searchProfession(Object.assign({},props.currentFilter,{'profession':newProfession}));
+    }
+}
 
 return  <Card>
                 <CrdMedia image={props.data.thumbnail}/>
@@ -31,7 +42,7 @@ return  <Card>
                     <CrdInfo><span>Height: </span>{props.data.height}</CrdInfo>
                     <CrdInfo><span>Hair Color: </span>{props.data.hair_color}</CrdInfo>
                     <CrdInfoFriendTitle>Friends</CrdInfoFriendTitle>
-                    {props.data.friends.map((friend,index) => <CrdInfoFriend key={'fri_'+index}>{friend}</CrdInfoFriend> )}
+                    {props.data.friends.map((friend,index) => <CrdInfoAction key={'fri_'+index} onClick={findFriend}>{friend}</CrdInfoAction> )}
                 </CrdData> 
                 
                 <CrdAccord>
@@ -40,7 +51,7 @@ return  <Card>
                         {!expand ? <CrdExpandM /> : <CrdExpandL />}
                     </CrdAccordSummary>
                     <CrdAccordDetails expand={expand}>
-                        {props.data.professions.map( (prof,i) => <CrdInfo key={prof+'_'+i} >{prof}</CrdInfo>)}
+                        {props.data.professions.map( (prof,i) => <CrdInfoAction key={prof+'_'+i} onClick={searchProfession} >{prof}</CrdInfoAction>)}
                     </CrdAccordDetails>
                 </CrdAccord>
                 </CrdDetails>        

@@ -37,9 +37,11 @@ const Filter = ({currentFilter,filter}) => {
                 break;
             case target.target === inputProfessionRef.current:
                 const newProfession = [...currentFilter.profession];
-                newProfession.push(inputProfessionRef.current.value);
+                if (!newProfession.includes(inputProfessionRef.current.value)){
+                    newProfession.push(inputProfessionRef.current.value);
+                    filter(Object.assign({},currentFilter,{'profession':newProfession}));
+                }
                 inputProfessionRef.current.value = '';
-                filter(Object.assign({},currentFilter,{'profession':newProfession}));
                 break;
             default:
                 break;

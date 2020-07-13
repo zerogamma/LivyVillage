@@ -66,6 +66,11 @@ export const FiCollapse = styled(ArrowBackIosIcon)`
 
 export const FiButtom = styled(Button)`
     cursor: pointer;
+    
+    &.MuiButton-root {
+        text-transform: none;
+        font-size: 1.2rem;
+    }
 `
 
 export const FiNote = styled.div`
