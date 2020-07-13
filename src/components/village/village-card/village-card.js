@@ -11,7 +11,9 @@ import {
     CrdInfoFriendTitle,
     CrdExpandM,
     CrdExpandL,
-    CrdInfoAction
+    CrdInfoAction,
+    CrdColorPalette,
+    CrdColorContent,
 } from './style'
 
 
@@ -40,7 +42,7 @@ return  <Card>
                     <CrdInfo><span>Age: </span>{props.data.age}</CrdInfo>
                     <CrdInfo><span>Weight: </span>{props.data.weight}</CrdInfo>
                     <CrdInfo><span>Height: </span>{props.data.height}</CrdInfo>
-                    <CrdInfo><span>Hair Color: </span>{props.data.hair_color}</CrdInfo>
+                    <CrdColorContent><CrdInfo><span>Hair Color: </span>{props.data.hair_color}</CrdInfo><CrdColorPalette color={props.data.hair_color}/></CrdColorContent>
                     <CrdInfoFriendTitle>Friends</CrdInfoFriendTitle>
                     {props.data.friends.map((friend,index) => <CrdInfoAction key={'fri_'+index} onClick={findFriend}>{friend}</CrdInfoAction> )}
                 </CrdData> 

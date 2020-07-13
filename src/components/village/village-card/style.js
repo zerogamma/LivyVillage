@@ -52,6 +52,25 @@ export const CrdInfoAction = styled(CrdInfo)`
     }
 `
 
+export const CrdColorPalette = styled.div`
+    background-color: ${props => props.color};
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 6px;
+    align-self: center;
+    
+    @media (max-width: ${props => props.theme.screen.sm}) {
+        width: 15px;
+        height: 15px;
+    }
+    
+`
+export const CrdColorContent = styled.div`
+    display: flex;
+`
+
+
 export const CrdInfoFriendTitle = styled(CrdInfo)`
     margin: 10px 0 !important;
     border-bottom: 1px solid;

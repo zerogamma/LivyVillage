@@ -23,37 +23,55 @@ exports[`village-card and village-list Component render test renders village-car
   font-variant: all-small-caps;
 }
 
-.c8 {
+.c10 {
   cursor: pointer;
 }
 
-.c8 span {
+.c10 span {
   font-variant: all-small-caps;
 }
 
-.c8:hover {
+.c10:hover {
   background-color: lightgrey;
   border-radius: 4px;
 }
 
+.c4 {
+  background-color: Green;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 6px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
   margin: 10px 0 !important;
   border-bottom: 1px solid;
 }
 
-.c3 span {
+.c5 span {
   font-variant: all-small-caps;
 }
 
-.c6 {
+.c8 {
   margin-left: 90px;
 }
 
-.c4 {
+.c6 {
   margin: 0 15px;
 }
 
-.c5 {
+.c7 {
   cursor: pointer;
   border-bottom: 1px solid;
   margin-bottom: 12px;
@@ -63,7 +81,7 @@ exports[`village-card and village-list Component render test renders village-car
   display: flex;
 }
 
-.c7 {
+.c9 {
   display: none;
 }
 
@@ -83,19 +101,26 @@ exports[`village-card and village-list Component render test renders village-car
 }
 
 @media (max-width:767px) {
+  .c10 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
+  .c4 {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width:767px) {
+  .c5 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
   .c8 {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width:767px) {
-  .c3 {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width:767px) {
-  .c6 {
     margin-left: 120px;
   }
 }
@@ -146,25 +171,33 @@ exports[`village-card and village-list Component render test renders village-car
         </span>
         110.43628
       </p>
-      <p
-        className="MuiTypography-root c2 MuiTypography-body1"
+      <div
+        className="c3"
       >
-        <span>
-          Hair Color: 
-        </span>
-        Green
-      </p>
+        <p
+          className="MuiTypography-root c2 MuiTypography-body1"
+        >
+          <span>
+            Hair Color: 
+          </span>
+          Green
+        </p>
+        <div
+          className="c4"
+          color="Green"
+        />
+      </div>
       <p
-        className="MuiTypography-root c3 MuiTypography-body1"
+        className="MuiTypography-root c5 MuiTypography-body1"
       >
         Friends
       </p>
     </div>
     <div
-      className="c4"
+      className="c6"
     >
       <div
-        className="c5"
+        className="c7"
         onClick={[Function]}
       >
         <p
@@ -176,7 +209,7 @@ exports[`village-card and village-list Component render test renders village-car
         </p>
         <svg
           aria-hidden={true}
-          className="MuiSvgIcon-root c6"
+          className="MuiSvgIcon-root c8"
           focusable="false"
           viewBox="0 0 24 24"
         >
@@ -186,40 +219,40 @@ exports[`village-card and village-list Component render test renders village-car
         </svg>
       </div>
       <div
-        className="c7"
+        className="c9"
       >
         <p
-          className="MuiTypography-root c8 MuiTypography-body1"
+          className="MuiTypography-root c10 MuiTypography-body1"
           onClick={[Function]}
         >
           Brewer
         </p>
         <p
-          className="MuiTypography-root c8 MuiTypography-body1"
+          className="MuiTypography-root c10 MuiTypography-body1"
           onClick={[Function]}
         >
           Medic
         </p>
         <p
-          className="MuiTypography-root c8 MuiTypography-body1"
+          className="MuiTypography-root c10 MuiTypography-body1"
           onClick={[Function]}
         >
           Prospector
         </p>
         <p
-          className="MuiTypography-root c8 MuiTypography-body1"
+          className="MuiTypography-root c10 MuiTypography-body1"
           onClick={[Function]}
         >
           Gemcutter
         </p>
         <p
-          className="MuiTypography-root c8 MuiTypography-body1"
+          className="MuiTypography-root c10 MuiTypography-body1"
           onClick={[Function]}
         >
           Mason
         </p>
         <p
-          className="MuiTypography-root c8 MuiTypography-body1"
+          className="MuiTypography-root c10 MuiTypography-body1"
           onClick={[Function]}
         >
           Tailor
@@ -254,37 +287,55 @@ Array [
   font-variant: all-small-caps;
 }
 
-.c9 {
+.c11 {
   cursor: pointer;
 }
 
-.c9 span {
+.c11 span {
   font-variant: all-small-caps;
 }
 
-.c9:hover {
+.c11:hover {
   background-color: lightgrey;
   border-radius: 4px;
 }
 
+.c5 {
+  background-color: Green;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 6px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
   margin: 10px 0 !important;
   border-bottom: 1px solid;
 }
 
-.c4 span {
+.c6 span {
   font-variant: all-small-caps;
 }
 
-.c7 {
+.c9 {
   margin-left: 90px;
 }
 
-.c5 {
+.c7 {
   margin: 0 15px;
 }
 
-.c6 {
+.c8 {
   cursor: pointer;
   border-bottom: 1px solid;
   margin-bottom: 12px;
@@ -294,7 +345,7 @@ Array [
   display: flex;
 }
 
-.c8 {
+.c10 {
   display: none;
 }
 
@@ -320,19 +371,30 @@ Array [
 }
 
 @media (max-width:767px) {
+  .c11 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
+  .c5 {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width:767px) {
+
+}
+
+@media (max-width:767px) {
+  .c6 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
   .c9 {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width:767px) {
-  .c4 {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width:767px) {
-  .c7 {
     margin-left: 120px;
   }
 }
@@ -386,25 +448,33 @@ Array [
             </span>
             110.43628
           </p>
-          <p
-            className="MuiTypography-root c3 MuiTypography-body1"
+          <div
+            className="c4"
           >
-            <span>
-              Hair Color: 
-            </span>
-            Green
-          </p>
+            <p
+              className="MuiTypography-root c3 MuiTypography-body1"
+            >
+              <span>
+                Hair Color: 
+              </span>
+              Green
+            </p>
+            <div
+              className="c5"
+              color="Green"
+            />
+          </div>
           <p
-            className="MuiTypography-root c4 MuiTypography-body1"
+            className="MuiTypography-root c6 MuiTypography-body1"
           >
             Friends
           </p>
         </div>
         <div
-          className="c5"
+          className="c7"
         >
           <div
-            className="c6"
+            className="c8"
             onClick={[Function]}
           >
             <p
@@ -416,7 +486,7 @@ Array [
             </p>
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root c7"
+              className="MuiSvgIcon-root c9"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -426,40 +496,40 @@ Array [
             </svg>
           </div>
           <div
-            className="c8"
+            className="c10"
           >
             <p
-              className="MuiTypography-root c9 MuiTypography-body1"
+              className="MuiTypography-root c11 MuiTypography-body1"
               onClick={[Function]}
             >
               Brewer
             </p>
             <p
-              className="MuiTypography-root c9 MuiTypography-body1"
+              className="MuiTypography-root c11 MuiTypography-body1"
               onClick={[Function]}
             >
               Medic
             </p>
             <p
-              className="MuiTypography-root c9 MuiTypography-body1"
+              className="MuiTypography-root c11 MuiTypography-body1"
               onClick={[Function]}
             >
               Prospector
             </p>
             <p
-              className="MuiTypography-root c9 MuiTypography-body1"
+              className="MuiTypography-root c11 MuiTypography-body1"
               onClick={[Function]}
             >
               Gemcutter
             </p>
             <p
-              className="MuiTypography-root c9 MuiTypography-body1"
+              className="MuiTypography-root c11 MuiTypography-body1"
               onClick={[Function]}
             >
               Mason
             </p>
             <p
-              className="MuiTypography-root c9 MuiTypography-body1"
+              className="MuiTypography-root c11 MuiTypography-body1"
               onClick={[Function]}
             >
               Tailor
@@ -491,37 +561,55 @@ Array [
   font-variant: all-small-caps;
 }
 
-.c5 {
+.c7 {
   cursor: pointer;
 }
 
-.c5 span {
+.c7 span {
   font-variant: all-small-caps;
 }
 
-.c5:hover {
+.c7:hover {
   background-color: lightgrey;
   border-radius: 4px;
 }
 
+.c5 {
+  background-color: Red;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 6px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
   margin: 10px 0 !important;
   border-bottom: 1px solid;
 }
 
-.c4 span {
+.c6 span {
   font-variant: all-small-caps;
 }
 
-.c8 {
+.c10 {
   margin-left: 90px;
 }
 
-.c6 {
+.c8 {
   margin: 0 15px;
 }
 
-.c7 {
+.c9 {
   cursor: pointer;
   border-bottom: 1px solid;
   margin-bottom: 12px;
@@ -531,7 +619,7 @@ Array [
   display: flex;
 }
 
-.c9 {
+.c11 {
   display: none;
 }
 
@@ -557,19 +645,30 @@ Array [
 }
 
 @media (max-width:767px) {
+  .c7 {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width:767px) {
+
+}
+
+@media (max-width:767px) {
   .c5 {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width:767px) {
+  .c6 {
     font-size: 12px !important;
   }
 }
 
 @media (max-width:767px) {
-  .c4 {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width:767px) {
-  .c8 {
+  .c10 {
     margin-left: 120px;
   }
 }
@@ -623,31 +722,39 @@ Array [
             </span>
             106.14395
           </p>
-          <p
-            className="MuiTypography-root c3 MuiTypography-body1"
+          <div
+            className="c4"
           >
-            <span>
-              Hair Color: 
-            </span>
-            Red
-          </p>
+            <p
+              className="MuiTypography-root c3 MuiTypography-body1"
+            >
+              <span>
+                Hair Color: 
+              </span>
+              Red
+            </p>
+            <div
+              className="c5"
+              color="Red"
+            />
+          </div>
           <p
-            className="MuiTypography-root c4 MuiTypography-body1"
+            className="MuiTypography-root c6 MuiTypography-body1"
           >
             Friends
           </p>
           <p
-            className="MuiTypography-root c5 MuiTypography-body1"
+            className="MuiTypography-root c7 MuiTypography-body1"
             onClick={[Function]}
           >
             Fizwood Voidtossle
           </p>
         </div>
         <div
-          className="c6"
+          className="c8"
         >
           <div
-            className="c7"
+            className="c9"
             onClick={[Function]}
           >
             <p
@@ -659,7 +766,7 @@ Array [
             </p>
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root c8"
+              className="MuiSvgIcon-root c10"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -669,22 +776,22 @@ Array [
             </svg>
           </div>
           <div
-            className="c9"
+            className="c11"
           >
             <p
-              className="MuiTypography-root c5 MuiTypography-body1"
+              className="MuiTypography-root c7 MuiTypography-body1"
               onClick={[Function]}
             >
               Cook
             </p>
             <p
-              className="MuiTypography-root c5 MuiTypography-body1"
+              className="MuiTypography-root c7 MuiTypography-body1"
               onClick={[Function]}
             >
               Baker
             </p>
             <p
-              className="MuiTypography-root c5 MuiTypography-body1"
+              className="MuiTypography-root c7 MuiTypography-body1"
               onClick={[Function]}
             >
               Miner
