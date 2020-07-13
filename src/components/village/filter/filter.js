@@ -57,7 +57,7 @@ const Filter = ({currentFilter,filter}) => {
             action(target);
     }
 
-    return <FilContainer>
+    return <FilContainer expanded={expand}>
                     <FiImgContainer>
                         {!expand ? <FiExpand onClick={()=> setExpand(!expand)} />: <FiCollapse onClick={()=> setExpand(!expand)} />}
                     </FiImgContainer>

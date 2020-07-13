@@ -8,7 +8,7 @@ import {
 const Footer  = () => (
                 <FTContainer>
                     <FTInfo>
-                        Copyright ©2020, Jin Park
+                        ©2020, Jin Park
                     </FTInfo>
                 </FTContainer>
             );

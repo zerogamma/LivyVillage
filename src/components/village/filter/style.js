@@ -6,10 +6,15 @@ import TextField from '@material-ui/core/TextField';
 
 
 export const FilContainer = styled.div`
+    transition: width 1s ease-out;
     height: 100%;
-    background-color: cadetblue;
-    width: 100%;
+    background-color: lightgray;
     min-height: 1000px;
+    ${props => !props.expanded ? `
+    width: 45px;
+    `:`
+    width: 250px;
+    `}
 `
 
 export const FilContent = styled.div`
@@ -18,7 +23,6 @@ export const FilContent = styled.div`
     position: relative;
     top: 50%;
     `:`
-    width: 250px;
     padding: 20px;
     border-bottom: 1px solid;
     `}
@@ -45,6 +49,8 @@ export const FilFilter = styled(TextField)`
 export const FiImgContainer = styled.div`
     top: 15px;
     position: relative;
+    text-align: end;
+    margin-right: 25px;
 `
 
 export const FiExpand = styled(ArrowForwardIosIcon)`
@@ -54,7 +60,6 @@ export const FiExpand = styled(ArrowForwardIosIcon)`
 
 export const FiCollapse = styled(ArrowBackIosIcon)`
     position: fixed;
-    left: 225px;
 `
 
 export const FiButtom = styled(Button)`
