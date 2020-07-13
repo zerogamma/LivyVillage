@@ -18,7 +18,7 @@ export const SchBox = styled(TextField)`
     text-align: center;
 
     @media (max-width: ${props => props.theme.screen.sm}) {
-        width: 225px;
+        width: 190px;
         & .MuiInputBase-input{
             font-size: 12px;
         }
