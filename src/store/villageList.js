@@ -5,9 +5,11 @@ import { compareWithTrunc , containsIn} from '../utils/function/Utils'
 
 export const fetchVillage = createAsyncThunk(
     'users/fetchVillage',
-    async () => {  
+    async (data) => {  
       try {
-        const response = await Api().default();
+        if (data === undefined)
+          throw 'no data';
+        const response = await Api.default();
         return {'response': response }
       } catch (err) {
         if (!err.response) {
@@ -58,9 +60,7 @@ const listSlice = createSlice({
         state.loading = true;
       });
       builder.addCase(fetchFailed, (state, action) => {
-        state.error = action.error.message
-          ? action.error.message
-          : "Failed to load data";
+        state.error = action.error.message ? action.error.message : "Failed to load data";
         state.loading = false;
       });
     }

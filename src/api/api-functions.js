@@ -1,9 +1,7 @@
 import axios from 'axios'
 import api from '../api.conf'
 
-const Api = () => {
-    return {
-        default: async () => {
+const Api = { 'default': async () => {
             let locals = []
             try {
               const response = await axios.get(`${api.url}`)
@@ -12,8 +10,6 @@ const Api = () => {
               console.error(error.toString())
             }
             return locals
-          },
-    }
-}
+} }
 
 export default Api;
