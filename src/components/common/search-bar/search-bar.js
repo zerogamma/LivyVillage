@@ -9,7 +9,7 @@ import {
 const SearchBar = (props) => {
     const inputValueRef = useRef(null);
 
-    const action = () => (props.search(inputValueRef.current.value, 'bar'))
+    const action = () => (props.search(inputValueRef.current.value))
     const handleKeyPress = (target) => {
        if (target.charCode === 13)
             action();

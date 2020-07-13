@@ -14,15 +14,20 @@ const Village = () => {
     const [filterValue, setfilterValue] = useState({'age':'', 'weight':'','height':'','hair':'','profession':[]})
     const [isLoading, setIsLoading] = useState(false)
     const [pageValue, setPageValue] = useState(0)
+    const [searchValue, setSearchValue] = useState('')
 
     const filter = (value) => {
         setfilterValue(value)
     }
 
+    const search = (value) => {
+        setSearchValue(value);
+    }
+
     useEffect( () => { 
         async function fetchData() {
             async function fetch(){
-                dispatch(fetchVillage({'filter':filterValue, 'page':pageValue}));
+                dispatch(fetchVillage({'name':searchValue,'filter':filterValue, 'page':pageValue}));
             }
             try {
                 await Promise.all([fetch()]);
@@ -34,7 +39,7 @@ const Village = () => {
         }
         setIsLoading(true);
         fetchData();
-    },[dispatch, filterValue, pageValue])
+    },[dispatch , searchValue , filterValue , pageValue])
 
    
 
@@ -42,7 +47,7 @@ const Village = () => {
                 <Filter currentFilter={filterValue} filter={filter}/>
                 <LoadingBar isLoading={isLoading}/>
                 <LayoutContainer>
-                    {/* <SearchBar search={search} placeholder='User Id (MultiSearch e.g: 1,2,3)' /> */}
+                    <SearchBar search={search} placeholder='Search By Name' />
                     <Switcher page={pageValue} setPage={setPageValue}/>
                     <List />
                 </LayoutContainer>

@@ -21,16 +21,16 @@ const Filter = ({currentFilter,filter}) => {
     const action = (target) => {
         switch(true){
             case target.target === inputAgeRef.current:
-                filter(Object.assign(currentFilter,{'age':inputAgeRef.current.value}));
+                filter(Object.assign({},currentFilter,{'age':Number(inputAgeRef.current.value)}));
                 break;
             case target.target === inputWeightRef.current:
-                filter(Object.assign(currentFilter,{'weight':inputWeightRef.current.value}));
+                filter(Object.assign({},currentFilter,{'weight':Number(inputWeightRef.current.value)}));
                 break;
             case target.target === inputHeightRef.current:
-                filter(Object.assign(currentFilter,{'height':inputHeightRef.current.value}));
+                filter(Object.assign({},currentFilter,{'height':Number(inputHeightRef.current.value)}));
                 break;
             case target.target === inputHairRef.current:
-                filter(Object.assign(currentFilter,{'hair':inputHairRef.current.value}));
+                filter(Object.assign({},currentFilter,{'hair':inputHairRef.current.value}));
                 break;
             default:
                 break;

@@ -8,6 +8,7 @@ import Village from '../village-list'
 
 const List = () => {
     const listStore = useSelector( state => state.list.entities )
+
     return <ELContainer>
                 <Village data={listStore} />                    
             </ELContainer>

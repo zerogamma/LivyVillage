@@ -9,6 +9,7 @@ export const FilContainer = styled.div`
     height: 100%;
     background-color: cadetblue;
     width: 100%;
+    min-height: 1000px;
 `
 
 export const FilContent = styled.div`

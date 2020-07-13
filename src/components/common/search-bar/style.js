@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 
 export const SchContainer = styled.div`
     text-align: left;
-    margin-bottom: 60px;
+    margin-left: 35px;
 `
 
 export const SchBox = styled(TextField)`
