@@ -1,0 +1,38 @@
+import axios from 'axios'
+import api from '../api.conf'
+
+const Api = () => {
+    return {
+        default: async () => {
+            let locals = []
+            try {
+              const response = await axios.get(`${api.url}`)
+              return response.data || locals
+            } catch (error) {
+              console.error(error.toString())
+            }
+            return locals
+          },
+        getManager: async employee => {
+            let employees = []
+            try {
+                const response = await axios.get(`${api.url}?manager=${employee}`) 
+                return response.data || employees
+            } catch ( error ) {
+                console.error(error.toString())
+            }
+        },
+        getByIds: async employee => {
+          let employees = []
+            try {
+                const response = await axios.get(`${api.url}?id=${employee}`) 
+                return response.data || employees
+            } catch ( error ) {
+                console.error(error.toString())
+            }
+        }
+
+    }
+}
+
+export default Api;
