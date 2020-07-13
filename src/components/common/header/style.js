@@ -9,13 +9,21 @@ export const HdContainer = styled.div`
     position: fixed;
     width: 100%;
     z-index: 9;
+    
+    @media (max-width: ${props => props.theme.screen.sm}) {
+        padding: 20px;
+	}
 `
 
 export const TText = styled.h1`
     display: block;
-    text-align: lett;
+    text-align: left;
     font-family: sans-serif;
     font-weight: 800;
+
+    @media (max-width: ${props => props.theme.screen.sm}) {
+		${props => props.theme.size.sm[5]}
+	}
 `
 
 

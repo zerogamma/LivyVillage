@@ -10,4 +10,8 @@ export const MainContent = styled.div`
     display: grid;
     place-items: center;
     grid-template: auto 1fr auto / auto 1fr auto;
+
+    @media (max-width: ${props => props.theme.screen.sm}) {
+        padding-top: 85px;
+    }
 `

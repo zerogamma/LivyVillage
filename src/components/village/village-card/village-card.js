@@ -7,7 +7,11 @@ import {
     CrdAccord,
     CrdAccordSummary,
     CrdAccordDetails,
-    CrdDetails
+    CrdDetails,
+    CrdInfoFriend,
+    CrdInfoFriendTitle,
+    CrdExpandM,
+    CrdExpandL
 } from './style'
 
 
@@ -26,11 +30,14 @@ return  <Card>
                     <CrdInfo><span>Weight: </span>{props.data.weight}</CrdInfo>
                     <CrdInfo><span>Height: </span>{props.data.height}</CrdInfo>
                     <CrdInfo><span>Hair Color: </span>{props.data.hair_color}</CrdInfo>
+                    <CrdInfoFriendTitle>Friends</CrdInfoFriendTitle>
+                    {props.data.friends.map((friend,index) => <CrdInfoFriend key={'fri_'+index}>{friend}</CrdInfoFriend> )}
                 </CrdData> 
                 
                 <CrdAccord>
                     <CrdAccordSummary onClick={()=> setExpand(!expand)}>
                         <CrdInfo><span>Profession</span></CrdInfo>
+                        {!expand ? <CrdExpandM /> : <CrdExpandL />}
                     </CrdAccordSummary>
                     <CrdAccordDetails expand={expand}>
                         {props.data.professions.map( (prof,i) => <CrdInfo key={prof+'_'+i} >{prof}</CrdInfo>)}
