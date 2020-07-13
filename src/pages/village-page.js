@@ -47,7 +47,7 @@ const Village = () => {
                 <Filter currentFilter={filterValue} filter={filter}/>
                 <LoadingBar isLoading={isLoading}/>
                 <LayoutContainer>
-                    <SearchBar search={search} placeholder='Search By Name' />
+                    <SearchBar search={search} placeholder='Search By Name (Case sensitive)' />
                     <Switcher page={pageValue} setPage={setPageValue}/>
                     <List />
                 </LayoutContainer>

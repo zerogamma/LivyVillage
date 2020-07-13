@@ -23,9 +23,10 @@ const listSlice = createSlice({
           const currentPage = action.meta.arg.page * config.offset;
           const offset = currentPage + config.offset;
 
-          try {  
-
+          try {
+            debugger;
             const filteredVillage = villageUsers.filter( r=> 
+              ( !action.meta.arg.name ? true : r.name.includes(action.meta.arg.name)) &&
               ( !action.meta.arg.filter.age ? true : action.meta.arg.filter.age === r.age ) &&
               ( !action.meta.arg.filter.height ? true : compareWithTrunc( action.meta.arg.filter.height , r.height ) ) &&
               ( !action.meta.arg.filter.weight ? true : compareWithTrunc( action.meta.arg.filter.weight , r.weight ) ) &&
