@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import list from './villageList'
+import list from './village-list'
 
 const store = configureStore({
     reducer: { list },

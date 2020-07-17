@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchVillage } from '../store/villageList'
+import { fetchVillage } from '../store/village-list'
 import List from '../components/village/village-container'
-import MainContainer from '../components/common/mainContainer'
+import MainContainer from '../components/common/main-container'
 import SearchBar from '../components/village/search-bar'
 import LoadingBar from '../components/common/loading-bar'
 import Switcher from '../components/village/switcher'
 import Filter from '../components/village/filter'
-import LayoutContainer from '../components/village/layoutContainer'
+import LayoutContainer from '../components/village/layout-container'
 import { useSelector } from 'react-redux'
 
 const Village = () => {
@@ -36,6 +36,15 @@ const Village = () => {
             filters.push(value)
             filter(Object.assign({}, filterValue, { profession: filters }))
         }
+    }
+
+    const filterRemoveProfession = (value) => {
+        const filters = [...filterValue]
+        filter(
+            Object.assign({}, filterValue, {
+                profession: filters.filter((pro) => pro !== value),
+            })
+        )
     }
 
     const search = (value) => {
@@ -67,7 +76,8 @@ const Village = () => {
             <Filter
                 currentFilter={filterValue}
                 filter={filter}
-                filterProfession={searchProfession}
+                searchProfession={searchProfession}
+                filterRemoveProfession={filterRemoveProfession}
             />
             <LoadingBar isLoading={isLoading} />
             <LayoutContainer>

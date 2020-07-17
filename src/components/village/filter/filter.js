@@ -12,7 +12,12 @@ import {
     FiNote,
 } from './style'
 
-const Filter = ({ currentFilter, filter, filterProfession }) => {
+const Filter = ({
+    currentFilter,
+    filter,
+    searchProfession,
+    filterRemoveProfession,
+}) => {
     const inputAgeRef = useRef(null)
     const inputWeightRef = useRef(null)
     const inputHeightRef = useRef(null)
@@ -21,56 +26,48 @@ const Filter = ({ currentFilter, filter, filterProfession }) => {
 
     const [expand, setExpand] = useState(false)
 
-    const action = (target) => {
-        switch (true) {
-            case target.target === inputAgeRef.current:
-                filter(
-                    Object.assign({}, currentFilter, {
-                        age: Number(inputAgeRef.current.value),
-                    })
-                )
-                break
-            case target.target === inputWeightRef.current:
-                filter(
-                    Object.assign({}, currentFilter, {
-                        weight: Number(inputWeightRef.current.value),
-                    })
-                )
-                break
-            case target.target === inputHeightRef.current:
-                filter(
-                    Object.assign({}, currentFilter, {
-                        height: Number(inputHeightRef.current.value),
-                    })
-                )
-                break
-            case target.target === inputHairRef.current:
-                filter(
-                    Object.assign({}, currentFilter, {
-                        hair: inputHairRef.current.value,
-                    })
-                )
-                break
-            case target.target === inputProfessionRef.current:
-                filterProfession(inputProfessionRef.current.value)
-                inputProfessionRef.current.value = ''
-                break
-            default:
-                break
-        }
-    }
-
     const removeProfession = (target) => {
-        const oldProfession = [...currentFilter.profession]
-        const newProfession = oldProfession.filter(
-            (r) =>
-                r.toUpperCase() !== target.currentTarget.innerText.toUpperCase()
-        )
-        filter(Object.assign({}, currentFilter, { profession: newProfession }))
+        filterRemoveProfession(target.currentTarget.innerText)
     }
 
-    const handleKeyPress = (target) => {
-        if (target.charCode === 13) action(target)
+    const filterAge = (target) => {
+        if (target.charCode === 13)
+            filter(
+                Object.assign({}, currentFilter, {
+                    age: Number(inputAgeRef.current.value),
+                })
+            )
+    }
+
+    const filterWeight = (target) => {
+        if (target.charCode === 13)
+            filter(
+                Object.assign({}, currentFilter, {
+                    weight: Number(inputWeightRef.current.value),
+                })
+            )
+    }
+    const filterHeight = (target) => {
+        if (target.charCode === 13)
+            filter(
+                Object.assign({}, currentFilter, {
+                    height: Number(inputHeightRef.current.value),
+                })
+            )
+    }
+    const filterHair = (target) => {
+        if (target.charCode === 13)
+            filter(
+                Object.assign({}, currentFilter, {
+                    hair: inputHairRef.current.value,
+                })
+            )
+    }
+    const filterProfession = (target) => {
+        if (target.charCode === 13) {
+            searchProfession(inputProfessionRef.current.value)
+            inputProfessionRef.current.value = ''
+        }
     }
 
     return (
@@ -89,27 +86,27 @@ const Filter = ({ currentFilter, filter, filterProfession }) => {
                 <FilFilters>
                     <FilFilter
                         inputRef={inputAgeRef}
-                        onKeyPress={handleKeyPress}
+                        onKeyPress={filterAge}
                         label="Age:"
                     ></FilFilter>
                     <FilFilter
                         inputRef={inputWeightRef}
-                        onKeyPress={handleKeyPress}
+                        onKeyPress={filterWeight}
                         label="Weight:"
                     ></FilFilter>
                     <FilFilter
                         inputRef={inputHeightRef}
-                        onKeyPress={handleKeyPress}
+                        onKeyPress={filterHeight}
                         label="Height:"
                     ></FilFilter>
                     <FilFilter
                         inputRef={inputHairRef}
-                        onKeyPress={handleKeyPress}
+                        onKeyPress={filterHair}
                         label="Hair Color:"
                     ></FilFilter>
                     <FilFilter
                         inputRef={inputProfessionRef}
-                        onKeyPress={handleKeyPress}
+                        onKeyPress={filterProfession}
                         label="Profession:"
                         placeholder="Case sensitive"
                     ></FilFilter>
