@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import {
     FilContainer,
     FilContent,
@@ -18,55 +18,25 @@ const Filter = ({
     searchProfession,
     filterRemoveProfession,
 }) => {
-    const inputAgeRef = useRef(null)
-    const inputWeightRef = useRef(null)
-    const inputHeightRef = useRef(null)
-    const inputHairRef = useRef(null)
-    const inputProfessionRef = useRef(null)
-
     const [expand, setExpand] = useState(false)
 
     const removeProfession = (target) => {
         filterRemoveProfession(target.currentTarget.innerText)
     }
 
-    const filterAge = (target) => {
+    const filterHandler = (target) => {
         if (target.charCode === 13)
             filter(
                 Object.assign({}, currentFilter, {
-                    age: Number(inputAgeRef.current.value),
+                    [target.currentTarget.dataset.type]: target.target.value,
                 })
             )
     }
 
-    const filterWeight = (target) => {
-        if (target.charCode === 13)
-            filter(
-                Object.assign({}, currentFilter, {
-                    weight: Number(inputWeightRef.current.value),
-                })
-            )
-    }
-    const filterHeight = (target) => {
-        if (target.charCode === 13)
-            filter(
-                Object.assign({}, currentFilter, {
-                    height: Number(inputHeightRef.current.value),
-                })
-            )
-    }
-    const filterHair = (target) => {
-        if (target.charCode === 13)
-            filter(
-                Object.assign({}, currentFilter, {
-                    hair: inputHairRef.current.value,
-                })
-            )
-    }
     const filterProfession = (target) => {
         if (target.charCode === 13) {
-            searchProfession(inputProfessionRef.current.value)
-            inputProfessionRef.current.value = ''
+            searchProfession(target.target.value)
+            target.target.value = ''
         }
     }
 
@@ -85,27 +55,26 @@ const Filter = ({
             {expand && (
                 <FilFilters>
                     <FilFilter
-                        inputRef={inputAgeRef}
-                        onKeyPress={filterAge}
+                        data-type="age"
+                        onKeyPress={filterHandler}
                         label="Age:"
                     ></FilFilter>
                     <FilFilter
-                        inputRef={inputWeightRef}
-                        onKeyPress={filterWeight}
+                        data-type="weight"
+                        onKeyPress={filterHandler}
                         label="Weight:"
                     ></FilFilter>
                     <FilFilter
-                        inputRef={inputHeightRef}
-                        onKeyPress={filterHeight}
+                        data-type="height"
+                        onKeyPress={filterHandler}
                         label="Height:"
                     ></FilFilter>
                     <FilFilter
-                        inputRef={inputHairRef}
-                        onKeyPress={filterHair}
+                        data-type="hair"
+                        onKeyPress={filterHandler}
                         label="Hair Color:"
                     ></FilFilter>
                     <FilFilter
-                        inputRef={inputProfessionRef}
                         onKeyPress={filterProfession}
                         label="Profession:"
                         placeholder="Case sensitive"

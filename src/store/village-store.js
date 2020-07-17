@@ -49,17 +49,17 @@ const listSlice = createSlice({
                             : r.name.includes(action.meta.arg.name)) &&
                         (!action.meta.arg.filter.age
                             ? true
-                            : action.meta.arg.filter.age === r.age) &&
+                            : Number(action.meta.arg.filter.age) === r.age) &&
                         (!action.meta.arg.filter.height
                             ? true
                             : compareWithTrunc(
-                                  action.meta.arg.filter.height,
+                                Number(action.meta.arg.filter.height),
                                   r.height
                               )) &&
                         (!action.meta.arg.filter.weight
                             ? true
                             : compareWithTrunc(
-                                  action.meta.arg.filter.weight,
+                                Number(action.meta.arg.filter.weight),
                                   r.weight
                               )) &&
                         (!action.meta.arg.filter.hair

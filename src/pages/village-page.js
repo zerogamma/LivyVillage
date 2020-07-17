@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchVillage } from '../store/village-list'
+import { fetchVillage } from '../store/village-store'
 import List from '../components/village/village-container'
 import MainContainer from '../components/common/main-container'
 import SearchBar from '../components/village/search-bar'
