@@ -3,8 +3,6 @@ import MaterialCard from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 
 export const Card = styled(MaterialCard)`
     display: grid;
@@ -71,31 +69,15 @@ export const CrdInfoFriendTitle = styled(CrdInfo)`
     border-bottom: 1px solid;
 `
 
-export const CrdExpandM = styled(ExpandMoreIcon)`
-    margin-left: 90px;
-    @media (max-width: ${(props) => props.theme.screen.sm}) {
-        margin-left: 120px;
-    }
-`
-export const CrdExpandL = styled(ExpandLessIcon)`
-    margin-left: 90px;
-    @media (max-width: ${(props) => props.theme.screen.sm}) {
-        margin-left: 120px;
-    }
-`
-
 export const CrdDetails = styled.div``
 
 export const CrdAccord = styled.div`
     margin: 0 15px;
 `
 export const CrdAccordSummary = styled.div`
-    cursor: pointer;
     border-bottom: 1px solid;
     margin-bottom: 12px;
     display: flex;
 `
-export const CrdAccordDetails = styled.div`
-    ${(props) => (props.expand ? 'display:block' : 'display:none')}
-`
+export const CrdAccordDetails = styled.div``
 export const CrdExpand = styled.div``

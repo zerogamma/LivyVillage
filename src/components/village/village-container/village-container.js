@@ -3,15 +3,10 @@ import { ELContainer } from './style'
 
 import Village from '../village-list'
 
-const List = ({ data, friendSearch, searchProfession, currentFilter }) => {
+const List = (props) => {
     return (
         <ELContainer>
-            <Village
-                data={data}
-                friendSearch={friendSearch}
-                searchProfession={searchProfession}
-                currentFilter={currentFilter}
-            />
+            <Village {...props} />
         </ELContainer>
     )
 }

@@ -30,6 +30,14 @@ const Village = () => {
         setfilterValue(value)
     }
 
+    const searchProfession = (value) => {
+        const filters = [...filterValue.profession]
+        if (!filters.includes(value)) {
+            filters.push(value)
+            filter(Object.assign({}, filterValue, { profession: filters }))
+        }
+    }
+
     const search = (value) => {
         setSearchValue(value)
     }
@@ -54,10 +62,13 @@ const Village = () => {
         fetchData()
     }, [dispatch, searchValue, filterValue, pageValue])
 
-    /* jshint ignore:start */
     return (
         <MainContainer>
-            <Filter currentFilter={filterValue} filter={filter} />
+            <Filter
+                currentFilter={filterValue}
+                filter={filter}
+                filterProfession={searchProfession}
+            />
             <LoadingBar isLoading={isLoading} />
             <LayoutContainer>
                 <SearchBar
@@ -72,13 +83,11 @@ const Village = () => {
                 <List
                     data={listStore}
                     friendSearch={search}
-                    searchProfession={filter}
-                    currentFilter={filterValue}
+                    searchProfession={searchProfession}
                 />
             </LayoutContainer>
         </MainContainer>
     )
-    /* jshint ignore:end */
 }
 
 export default Village

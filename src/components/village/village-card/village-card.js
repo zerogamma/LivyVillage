@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
     Card,
     CrdData,
@@ -9,30 +9,19 @@ import {
     CrdAccordDetails,
     CrdDetails,
     CrdInfoFriendTitle,
-    CrdExpandM,
-    CrdExpandL,
     CrdInfoAction,
     CrdColorPalette,
     CrdColorContent,
 } from './style'
 
 const VillageCard = (props) => {
-    const [expand, setExpand] = useState(false)
 
-    const findFriend = (target) => {
-        props.friendSearch(target.currentTarget.innerText)
+    const selectedFriend = (target) => {
+      props.searchFriend(target.currentTarget.innerText)
     }
 
-    const searchProfession = (target) => {
-        const newProfession = [...props.currentFilter.profession]
-        if (!newProfession.includes(target.currentTarget.innerText)) {
-            newProfession.push(target.currentTarget.innerText)
-            props.searchProfession(
-                Object.assign({}, props.currentFilter, {
-                    profession: newProfession,
-                })
-            )
-        }
+    const selectedProfession = (target) => {
+        props.searchProfession(target.currentTarget.innerText)
     }
 
     return (
@@ -66,7 +55,7 @@ const VillageCard = (props) => {
                     {props.data.friends.map((friend, index) => (
                         <CrdInfoAction
                             key={'fri_' + index}
-                            onClick={findFriend}
+                            onClick={selectedFriend}
                         >
                             {friend}
                         </CrdInfoAction>
@@ -74,17 +63,16 @@ const VillageCard = (props) => {
                 </CrdData>
 
                 <CrdAccord>
-                    <CrdAccordSummary onClick={() => setExpand(!expand)}>
+                    <CrdAccordSummary>
                         <CrdInfo>
                             <span>Profession</span>
                         </CrdInfo>
-                        {!expand ? <CrdExpandM /> : <CrdExpandL />}
                     </CrdAccordSummary>
-                    <CrdAccordDetails expand={expand}>
+                    <CrdAccordDetails>
                         {props.data.professions.map((prof, i) => (
                             <CrdInfoAction
                                 key={prof + '_' + i}
-                                onClick={searchProfession}
+                                onClick={selectedProfession}
                             >
                                 {prof}
                             </CrdInfoAction>

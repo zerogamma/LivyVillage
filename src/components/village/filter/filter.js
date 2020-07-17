@@ -12,7 +12,7 @@ import {
     FiNote,
 } from './style'
 
-const Filter = ({ currentFilter, filter }) => {
+const Filter = ({ currentFilter, filter, filterProfession }) => {
     const inputAgeRef = useRef(null)
     const inputWeightRef = useRef(null)
     const inputHeightRef = useRef(null)
@@ -52,15 +52,7 @@ const Filter = ({ currentFilter, filter }) => {
                 )
                 break
             case target.target === inputProfessionRef.current:
-                const newProfession = [...currentFilter.profession]
-                if (!newProfession.includes(inputProfessionRef.current.value)) {
-                    newProfession.push(inputProfessionRef.current.value)
-                    filter(
-                        Object.assign({}, currentFilter, {
-                            profession: newProfession,
-                        })
-                    )
-                }
+                filterProfession(inputProfessionRef.current.value)
                 inputProfessionRef.current.value = ''
                 break
             default:

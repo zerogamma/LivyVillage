@@ -4,12 +4,11 @@ import VillageCard from '../village-card'
 
 const List = (props) => {
     return props.data.map((list, i) => (
-        <VillList key={list.id}>
+        <VillList key={i}>
             <VillageCard
                 data={list}
-                friendSearch={props.friendSearch}
+                searchFriend={props.searchFriend}
                 searchProfession={props.searchProfession}
-                currentFilter={props.currentFilter}
             />
         </VillList>
     ))
