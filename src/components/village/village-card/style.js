@@ -24,7 +24,9 @@ export const Card = styled(MaterialCard)`
 `
 
 export const CrdMedia = styled(CardMedia)`
-    background-size: 100% 100% !important;
+    background-size: contain !important;
+    background-position: top !important;
+    margin-top: 20px;
 `
 
 export const CrdData = styled(CardContent)``
