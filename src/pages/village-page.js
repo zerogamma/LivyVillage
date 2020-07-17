@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchVillage } from '../store/villageList'
-import List from "../components/village/village-container"
-import MainContainer from "../components/common/mainContainer"
+import List from '../components/village/village-container'
+import MainContainer from '../components/common/mainContainer'
 import SearchBar from '../components/village/search-bar'
 import LoadingBar from '../components/common/loading-bar'
 import Switcher from '../components/village/switcher'
@@ -12,48 +12,73 @@ import { useSelector } from 'react-redux'
 
 const Village = () => {
     const dispatch = useDispatch()
-    const [filterValue, setfilterValue] = useState({'age':'', 'weight':'','height':'','hair':'','profession':[]})
+    const [filterValue, setfilterValue] = useState({
+        age: '',
+        weight: '',
+        height: '',
+        hair: '',
+        profession: [],
+    })
     const [pageValue, setPageValue] = useState(0)
     const [searchValue, setSearchValue] = useState('')
 
-    const isLoading = useSelector( state => state.list.loading )
-    const noData = useSelector( state => state.list.noData )
-    const listStore = useSelector( state => state.list.entities )
+    const isLoading = useSelector((state) => state.list.loading)
+    const noData = useSelector((state) => state.list.noData)
+    const listStore = useSelector((state) => state.list.entities)
 
     const filter = (value) => {
         setfilterValue(value)
     }
 
     const search = (value) => {
-        setSearchValue(value);
+        setSearchValue(value)
     }
 
-    useEffect( () => { 
+    useEffect(() => {
         async function fetchData() {
-            async function fetch(){
-                dispatch(fetchVillage({'name':searchValue,'filter':filterValue, 'page':pageValue}));
+            async function fetch() {
+                dispatch(
+                    fetchVillage({
+                        name: searchValue,
+                        filter: filterValue,
+                        page: pageValue,
+                    })
+                )
             }
             try {
-                await Promise.all([fetch()]);
-              } catch (err) {
-                console.error(err);
-              }
+                await Promise.all([fetch()])
+            } catch (err) {
+                console.error(err)
+            }
         }
-        fetchData();
-    },[dispatch , searchValue , filterValue , pageValue])
+        fetchData()
+    }, [dispatch, searchValue, filterValue, pageValue])
 
-   
-
-    return <MainContainer>
-                <Filter currentFilter={filterValue} filter={filter}/>
-                <LoadingBar isLoading={isLoading}/>
-                <LayoutContainer>
-                    <SearchBar search={search} placeholder='Search By Name (Case sensitive)' />
-                    <Switcher noData={noData} page={pageValue} setPage={setPageValue}/>
-                    <List data={listStore} friendSearch={search} searchProfession={filter} currentFilter={filterValue}/>
-                </LayoutContainer>
-            </MainContainer>
+    /* jshint ignore:start */
+    return (
+        <MainContainer>
+            <Filter currentFilter={filterValue} filter={filter} />
+            <LoadingBar isLoading={isLoading} />
+            <LayoutContainer>
+                <SearchBar
+                    search={search}
+                    placeholder="Search By Name (Case sensitive)"
+                />
+                <Switcher
+                    noData={noData}
+                    page={pageValue}
+                    setPage={setPageValue}
+                />
+                <List
+                    data={listStore}
+                    friendSearch={search}
+                    searchProfession={filter}
+                    currentFilter={filterValue}
+                />
+            </LayoutContainer>
+        </MainContainer>
+    )
+    /* jshint ignore:end */
 }
 
-export default Village;
-  
+export default Village

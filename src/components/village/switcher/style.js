@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious'
+import SkipNextIcon from '@material-ui/icons/SkipNext'
 import NoDataImg from '../../../content/image/no_result.png'
 
 export const SwContainer = styled.div`
     display: flex;
     justify-content: center;
-    @media (max-width: ${props => props.theme.screen.sm}) {
-       margin-top: 15px;
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
+        margin-top: 15px;
     }
 `
 
@@ -15,23 +15,21 @@ export const SwPrev = styled(SkipPreviousIcon)`
     cursor: pointer;
     width: 2em !important;
     height: 2em !important;
-   
-    @media (max-width: ${props => props.theme.screen.sm}) {
+
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
         width: 1em !important;
         height: 1em !important;
     }
 
-    ${props => props.disabled ? 'color:gray' : 'color:black' }
-
-    
+    ${(props) => (props.disabled ? 'color:gray' : 'color:black')}
 `
 
 export const SwNext = styled(SkipNextIcon)`
-    cursor: pointer;    
+    cursor: pointer;
     width: 2em !important;
     height: 2em !important;
 
-    @media (max-width: ${props => props.theme.screen.sm}) {
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
         width: 1em !important;
         height: 1em !important;
     }
@@ -46,7 +44,7 @@ export const SwNoDataImg = styled.div`
     background-position-y: top;
     margin-top: 60px;
 
-    @media (max-width: ${props => props.theme.screen.sm}) {
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
         height: 250px;
         width: 250px;
     }

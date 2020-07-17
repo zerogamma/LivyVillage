@@ -7,6 +7,4 @@ export const LdgContainer = styled.div`
     color: white;
     z-index: 9999;
 `
-export const LdgIcon = styled.div`
-
-`
+export const LdgIcon = styled.div``

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import MaterialCard from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import MaterialCard from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 
 export const Card = styled(MaterialCard)`
     display: grid;
@@ -17,59 +17,54 @@ export const Card = styled(MaterialCard)`
     width: 400px;
     height: 550px;
 
-    @media (max-width: ${props => props.theme.screen.sm}) {
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
         grid-template-columns: auto;
         grid-template-rows: 25% 75%;
         width: 250px;
         height: 650px;
     }
- 
 `
 
 export const CrdMedia = styled(CardMedia)`
     background-size: 100% 100% !important;
 `
 
-export const CrdData = styled(CardContent)`
-`
+export const CrdData = styled(CardContent)``
 
 export const CrdInfo = styled(Typography)`
-
-    @media (max-width: ${props => props.theme.screen.sm}) {
-        font-size: 12px !important;    
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
+        font-size: 12px !important;
     }
 
-    span{
+    span {
         font-variant: all-small-caps;
     }
 `
 
 export const CrdInfoAction = styled(CrdInfo)`
-    cursor:pointer;
-    :hover{
+    cursor: pointer;
+    :hover {
         background-color: lightgrey;
         border-radius: 4px;
     }
 `
 
 export const CrdColorPalette = styled.div`
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
     width: 20px;
     height: 20px;
     margin-left: 10px;
     border-radius: 6px;
     align-self: center;
-    
-    @media (max-width: ${props => props.theme.screen.sm}) {
+
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
         width: 15px;
         height: 15px;
     }
-    
 `
 export const CrdColorContent = styled.div`
     display: flex;
 `
-
 
 export const CrdInfoFriendTitle = styled(CrdInfo)`
     margin: 10px 0 !important;
@@ -78,19 +73,18 @@ export const CrdInfoFriendTitle = styled(CrdInfo)`
 
 export const CrdExpandM = styled(ExpandMoreIcon)`
     margin-left: 90px;
-    @media (max-width: ${props => props.theme.screen.sm}) {
-        margin-left: 120px;   
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
+        margin-left: 120px;
     }
 `
 export const CrdExpandL = styled(ExpandLessIcon)`
     margin-left: 90px;
-    @media (max-width: ${props => props.theme.screen.sm}) {
-        margin-left: 120px;   
+    @media (max-width: ${(props) => props.theme.screen.sm}) {
+        margin-left: 120px;
     }
 `
 
 export const CrdDetails = styled.div``
-
 
 export const CrdAccord = styled.div`
     margin: 0 15px;
@@ -102,6 +96,6 @@ export const CrdAccordSummary = styled.div`
     display: flex;
 `
 export const CrdAccordDetails = styled.div`
-    ${props => props.expand ? 'display:block' : 'display:none'} 
+    ${(props) => (props.expand ? 'display:block' : 'display:none')}
 `
 export const CrdExpand = styled.div``
